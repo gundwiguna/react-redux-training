@@ -1,13 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch, useStore } from "react-redux";
+import { useSelector, useDispatch, useStore, connect } from "react-redux";
 import { Button } from "reactstrap";
 import { increment, decrement } from "./store/actions";
 
-function App() {
-  const store = useStore();
-  store.subscribe(() => {
-    console.log(store.getState());
-  });
+function App(props) {
+  console.log(props)
   const dispatch = useDispatch();
   const number = useSelector(state => state.number);
   return (
@@ -19,4 +16,7 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  number: state.number
+});
+export default connect(mapStateToProps)(App);

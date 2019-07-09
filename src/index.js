@@ -4,13 +4,8 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
 import { Provider } from "react-redux";
-import { counter } from "./store/reducer";
-import { createStore } from "redux";
-
-let store = createStore(counter);
-// store.subscribe(() => console.log(store.getState()));
+import { store } from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
