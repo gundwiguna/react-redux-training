@@ -9,7 +9,7 @@ function App(props) {
   const number = useSelector(state => state.number);
   return (
     <div className="App">
-      <h3>Hello{number}</h3>
+      <h3>Hellox{number}</h3>
       <Button onClick={() => dispatch(increment())}>Plus</Button>
       <Button onClick={() => dispatch(decrement())}>Minus</Button>
     </div>
